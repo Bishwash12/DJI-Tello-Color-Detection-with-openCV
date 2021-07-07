@@ -164,6 +164,7 @@ while True:
     yellow_result = cv2.bitwise_and(img, img, mask=yellow_mask)
     yellow_mask = cv2.cvtColor(yellow_mask, cv2.COLOR_GRAY2BGR)
 
+    # Removing noise using GaussianBlur
     yellow_imgBlur = cv2.GaussianBlur(yellow_result, (7, 7), 1)
     yellow_imgGray = cv2.cvtColor(yellow_imgBlur, cv2.COLOR_BGR2GRAY)
     threshold1 = cv2.getTrackbarPos("Threshold1", "Parameters")
